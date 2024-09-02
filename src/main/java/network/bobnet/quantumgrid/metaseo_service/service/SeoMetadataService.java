@@ -2,6 +2,7 @@ package network.bobnet.quantumgrid.metaseo_service.service;
 
 import lombok.AllArgsConstructor;
 import network.bobnet.quantumgrid.metaseo_service.entity.SeoMetadata;
+import network.bobnet.quantumgrid.metaseo_service.enums.EntityType;
 import network.bobnet.quantumgrid.metaseo_service.repository.SeoMetadataRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class SeoMetadataService {
         return seoMetadataRepository.findById(id);
     }
 
-    public List<SeoMetadata> getSeoMetadataByEntity(Long entityId, String entityType) {
+    public List<SeoMetadata> getSeoMetadataByEntity(Long entityId, EntityType entityType) {
         return seoMetadataRepository.findByEntityIdAndEntityType(entityId, entityType);
     }
 

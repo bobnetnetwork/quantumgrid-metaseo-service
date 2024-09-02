@@ -2,6 +2,7 @@ package network.bobnet.quantumgrid.metaseo_service.controller;
 
 import lombok.AllArgsConstructor;
 import network.bobnet.quantumgrid.metaseo_service.entity.SeoMetadata;
+import network.bobnet.quantumgrid.metaseo_service.enums.EntityType;
 import network.bobnet.quantumgrid.metaseo_service.service.SeoMetadataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class SeoMetadataController {
     @GetMapping
     public ResponseEntity<List<SeoMetadata>> getSeoMetadataByEntity(
             @RequestParam Long entityId,
-            @RequestParam String entityType) {
+            @RequestParam EntityType entityType) {
         List<SeoMetadata> seoMetadataList = seoMetadataService.getSeoMetadataByEntity(entityId, entityType);
         return ResponseEntity.ok(seoMetadataList);
     }

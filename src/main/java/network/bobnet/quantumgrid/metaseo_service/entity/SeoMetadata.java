@@ -2,6 +2,7 @@ package network.bobnet.quantumgrid.metaseo_service.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import network.bobnet.quantumgrid.metaseo_service.enums.EntityType;
 
 import java.time.LocalDateTime;
 
@@ -21,8 +22,9 @@ public class SeoMetadata {
     @Column(name = "entity_id", nullable = false)
     private Long entityId;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "entity_type", nullable = false)
-    private String entityType;
+    private EntityType entityType;
 
     @Column(name = "title")
     private String title;
